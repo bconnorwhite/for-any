@@ -6,7 +6,8 @@ Use map, filter, reduce, and forEach on both arrays and non-array types.
 
 ### forEachAny<T>(any: (T | T[]), fn: (element: T, index: number, array: T[])=>void)
 
-`import { forEachAny } from 'for-any';
+```js
+import { forEachAny } from 'for-any';
 
 let array = ['a', 'b', 'c'];
 let item = 'd';
@@ -19,11 +20,13 @@ forEachAny(array, fn);
 // output: "c"
 
 forEachAny(item, fn);
-// output: "d"`
+// output: "d"
+```
 
 ### mapAny<T>(any: (T | T[]), fn: (currentValue: T, index: number, array: T[])=>T)
 
-`import { mapAny } from 'for-any';
+```js
+import { mapAny } from 'for-any';
 
 let array = [1, 4, 9, 16];
 let item = 5;
@@ -36,11 +39,13 @@ console.log(arrayResult);
 
 let itemResult = mapAny(item, fn;
 console.log(itemResult);
-// output: 10`
+// output: 10
+```
 
 ### filterAny<T>(any: (T | T[]), fn: (element: T, index: number, array: T[])=>T[])
 
-`import { filterAny } from 'for-any';
+```js
+import { filterAny } from 'for-any';
 
 let array = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
 let item1 = 'test';
@@ -58,11 +63,13 @@ console.log(item1Result);
 
 let item2Result = filterAny(item2, fn);
 console.log(item2Result);
-// output: "testing #2"`
+// output: "testing #2"
+```
 
 ### reduceAny<T>(any: (T | T[]), fn: (accumulator: T, currentValue: T, currentIndex: number, array: T[])=>T, initialValue: T)
 
-`import { reduceAny } from 'for-any';
+```js
+import { reduceAny } from 'for-any';
 
 let array = [1, 2, 3, 4];
 let item = 5;
@@ -75,4 +82,5 @@ console.log(arrayResult);
 
 let itemResult = reduceAny(array, fn);
 console.log(itemResult);
-// output: 5`
+// output: 5
+```

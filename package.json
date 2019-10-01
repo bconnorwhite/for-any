@@ -17,5 +17,9 @@
     "filter",
     "item",
     "array"
-  ]
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ConnorWhite/for-any.git"
+  },
 }
