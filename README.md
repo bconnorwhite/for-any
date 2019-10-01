@@ -8,7 +8,7 @@ npm i @bconnorwhite/for-any
 
 ## API
 
-### forEachAny<T>(any: (T | T[]), fn: (element: T, index: number, array: T[])=>void)
+### forEachAny<T>(any: (T | T[]), fn: (element: T, index: number, array: T[])=>void)=>void
 
 ```js
 import { forEachAny } from 'for-any';
@@ -27,7 +27,7 @@ forEachAny(item, fn);
 // output: "d"
 ```
 
-### mapAny<T>(any: (T | T[]), fn: (currentValue: T, index: number, array: T[])=>T)
+### mapAny<T>(any: (T | T[]), fn: (currentValue: T, index: number, array: T[])=>any)=>(any | any[])
 
 ```js
 import { mapAny } from 'for-any';
@@ -46,7 +46,7 @@ console.log(itemResult);
 // output: 10
 ```
 
-### filterAny<T>(any: (T | T[]), fn: (element: T, index: number, array: T[])=>T[])
+### filterAny<T>(any: (T | T[]), fn: (element: T, index: number, array: T[])=>any[])=>(any | any[])
 
 ```js
 import { filterAny } from 'for-any';
@@ -70,7 +70,7 @@ console.log(item2Result);
 // output: "testing #2"
 ```
 
-### reduceAny<T>(any: (T | T[]), fn: (accumulator: T, currentValue: T, currentIndex: number, array: T[])=>T, initialValue: T)
+### reduceAny<T>(any: (T | T[]), fn: (accumulator: T, currentValue: T, currentIndex: number, array: T[])=>any, initialValue: T)=>any
 
 ```js
 import { reduceAny } from 'for-any';
