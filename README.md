@@ -2,6 +2,10 @@
 
 Use map, filter, reduce, and forEach on both arrays and non-array types.
 
+```
+npm i @bconnorwhite/for-any
+```
+
 ## API
 
 ### forEachAny<T>(any: (T | T[]), fn: (element: T, index: number, array: T[])=>void)
