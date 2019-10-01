@@ -1,0 +1,21 @@
+{
+  "name": "for-any",
+  "version": "1.0.0",
+  "description": "Use map, filter, reduce, and forEach on both arrays and non-array types.",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc index.ts"
+  },
+  "author": "Connor White",
+  "license": "ISC",
+  "keywords": [
+    "for",
+    "any",
+    "forEach",
+    "map",
+    "reduce",
+    "filter",
+    "item",
+    "array"
+  ]
+}
