@@ -63,7 +63,7 @@ console.log(arrayResult);
 
 let item1Result = filterAny(item1, callback);
 console.log(item1Result);
-// output: _undefined_
+// output: undefined
 
 let item2Result = filterAny(item2, callback);
 console.log(item2Result);
@@ -110,5 +110,5 @@ console.log(item1Result);
 
 let item2Result = findAny(item2, callback);
 console.log(item2Result);
-// output: _undefined_
+// output: undefined
 ```
