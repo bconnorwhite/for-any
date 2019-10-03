@@ -1,0 +1,12 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "lib": [
+      "es6"
+    ],
+    "target": "es5"
+  },
+  "include": [
+    "./index.ts"
+  ]
+}
