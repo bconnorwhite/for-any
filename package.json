@@ -1,10 +1,10 @@
 {
   "name": "@bconnorwhite/for-any",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "Use map, filter, reduce, and forEach on both arrays and non-array types.",
   "main": "index.js",
   "scripts": {
-    "build": "tsc index.ts"
+    "build": "tsc --project ./tsconfig.json"
   },
   "author": "Connor White",
   "license": "ISC",
