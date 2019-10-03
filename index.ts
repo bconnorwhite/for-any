@@ -16,7 +16,7 @@ export function mapAny<T>(any: (T | T[]), callback: (currentValue: T, index?: nu
   }
 }
 
-export function filterAny<T>(any: (T | T[]), callback: (element: T, index?: number, array?: T[])=>any[], thisArg?: any) {
+export function filterAny<T>(any: (T | T[]), callback: (element: T, index?: number, array?: T[])=>boolean, thisArg?: any) {
   if(Array.isArray(any)) {
     return any.filter((element: T, index?: number, array?: T[]) => callback(element, index, array), thisArg);
   } else {
@@ -31,7 +31,7 @@ export function reduceAny<T>(any: (T | T[]), callback: (accumulator: T, currentV
   return any.reduce((accumulator: T, currentValue: T, index?: number, array?: T[]) => callback(accumulator, currentValue, index, array), initialValue);
 }
 
-export function findAny<T>(any: (T | T[]), callback: (element: T, index?: number, array?: T[])=>T, thisArg?: any) {
+export function findAny<T>(any: (T | T[]), callback: (element: T, index?: number, array?: T[])=>boolean, thisArg?: any) {
   if(!Array.isArray(any)) {
     any = [any];
   }

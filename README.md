@@ -46,7 +46,7 @@ console.log(itemResult);
 // output: 10
 ```
 
-### filterAny<T>(any: (T | T[]), callback: (element: T, index?: number, array?: T[])=>any[], thisArg?: any)=>(any | any[])
+### filterAny<T>(any: (T | T[]), callback: (element: T, index?: number, array?: T[])=>boolean, thisArg?: any)=>(any | any[])
 
 ```js
 import { filterAny } from 'for-any';
@@ -89,7 +89,7 @@ console.log(itemResult);
 // output: 5
 ```
 
-### findAny<T>(any: (T | T[]), callback: (element: T, index?: number, array?: T[])=>T, thisArg?: any)=>any
+### findAny<T>(any: (T | T[]), callback: (element: T, index?: number, array?: T[])=>boolean, thisArg?: any)=>T
 
 ```js
 import { findAny } from 'for-any';
