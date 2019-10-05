@@ -1,6 +1,6 @@
 {
   "name": "@bconnorwhite/for-any",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "Use map, filter, reduce, and forEach on both arrays and non-array types.",
   "main": "./build/index.js",
   "scripts": {
