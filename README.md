@@ -2,13 +2,23 @@
 
 Use map, filter, reduce, forEach, and find on both arrays and non-array types.
 
-```
-npm i @bconnorwhite/for-any
+```bash
+yarn add @bconnorwhite/for-any
 ```
 
 ## API
 
-`forEachAny<T>(any: (T | T[]), callback: (element: T, index?: number, array?: T[])=>void, thisArg?: any)=>void`
+#### forEachAny
+
+```ts
+forEachAny<T>(
+  any: (T | T[]),
+  callback: (element: T, index?: number, array?: T[]) => void,
+  thisArg?: any
+) => void
+```
+
+###### Example usage:
 
 ```js
 import { forEachAny } from 'for-any';
@@ -26,8 +36,18 @@ forEachAny(array, callback);
 forEachAny(item, callback);
 // output: "d"
 ```
+---
+#### mapAny
 
-`mapAny<T>(any: (T | T[]), callback: (currentValue: T, index?: number, array?: T[])=>any, thisArg?: any)=>(any | any[])`
+```ts
+mapAny<T>(
+  any: (T | T[]),
+  callback: (currentValue: T, index?: number, array?: T[]) => any,
+  thisArg?: any
+) => (any | any[])
+```
+
+###### Example usage:
 
 ```js
 import { mapAny } from 'for-any';
@@ -46,7 +66,19 @@ console.log(itemResult);
 // output: 10
 ```
 
-`filterAny<T>(any: (T | T[]), callback: (element: T, index?: number, array?: T[])=>boolean, thisArg?: any)=>(any | any[])`
+---
+
+#### filterAny
+
+```ts
+filterAny<T>(
+  any: (T | T[]),
+  callback: (element: T, index?: number, array?: T[]) => boolean,
+  thisArg?: any
+) => (any | any[])
+```
+
+###### Example usage:
 
 ```js
 import { filterAny } from 'for-any';
@@ -70,7 +102,19 @@ console.log(item2Result);
 // output: "testing #2"
 ```
 
-`reduceAny<T>(any: (T | T[]), callback: (accumulator: T, currentValue: T, index?: number, array?: T[])=>any, initialValue?: T)=>any`
+---
+
+#### reduceAny
+
+```ts
+reduceAny<T>(
+  any: (T | T[]),
+  callback: (accumulator: T, currentValue: T, index?: number, array?: T[]) => any,
+  initialValue?: T
+) => any
+```
+
+###### Example usage:
 
 ```js
 import { reduceAny } from 'for-any';
@@ -89,7 +133,19 @@ console.log(itemResult);
 // output: 5
 ```
 
-`findAny<T>(any: (T | T[]), callback: (element: T, index?: number, array?: T[])=>boolean, thisArg?: any)=>T`
+---
+
+#### findAny
+
+```ts
+findAny<T>(
+  any: (T | T[]),
+  callback: (element: T, index?: number, array?: T[]) => boolean,
+  thisArg?: any
+) => T
+```
+
+###### Example usage:
 
 ```js
 import { findAny } from 'for-any';
