@@ -8,34 +8,12 @@ yarn add @bconnorwhite/for-any
 
 ## API
 
-#### forEachAny
+- [mapAny](#mapAny)  
+- [filterAny](#filterAny)  
+- [reduceAny](#reduceAny)  
+- [forEachAny](#forEachAny)  
+- [findAny](#findAny)
 
-```ts
-forEachAny<T>(
-  any: (T | T[]),
-  callback: (element: T, index?: number, array?: T[]) => void,
-  thisArg?: any
-) => void
-```
-
-###### Example usage:
-
-```js
-import { forEachAny } from 'for-any';
-
-let array = ['a', 'b', 'c'];
-let item = 'd';
-
-let callback = (element)=>console.log(element);
-
-forEachAny(array, callback);
-// output: "a"
-// output: "b"
-// output: "c"
-
-forEachAny(item, callback);
-// output: "d"
-```
 ---
 #### mapAny
 
@@ -131,6 +109,37 @@ console.log(arrayResult);
 let itemResult = reduceAny(item, callback);
 console.log(itemResult);
 // output: 5
+```
+
+---
+
+#### forEachAny
+
+```ts
+forEachAny<T>(
+  any: (T | T[]),
+  callback: (element: T, index?: number, array?: T[]) => void,
+  thisArg?: any
+) => void
+```
+
+###### Example usage:
+
+```js
+import { forEachAny } from 'for-any';
+
+let array = ['a', 'b', 'c'];
+let item = 'd';
+
+let callback = (element)=>console.log(element);
+
+forEachAny(array, callback);
+// output: "a"
+// output: "b"
+// output: "c"
+
+forEachAny(item, callback);
+// output: "d"
 ```
 
 ---
