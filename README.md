@@ -1,6 +1,6 @@
 # for-any
 
-Use map, filter, reduce, and forEach on both arrays and non-array types.
+Use map, filter, reduce, forEach, and find on both arrays and non-array types.
 
 ```
 npm i @bconnorwhite/for-any
@@ -8,7 +8,7 @@ npm i @bconnorwhite/for-any
 
 ## API
 
-### forEachAny<T>(any: (T | T[]), callback: (element: T, index?: number, array?: T[])=>void, thisArg?: any)=>void
+`forEachAny<T>(any: (T | T[]), callback: (element: T, index?: number, array?: T[])=>void, thisArg?: any)=>void`
 
 ```js
 import { forEachAny } from 'for-any';
@@ -27,7 +27,7 @@ forEachAny(item, callback);
 // output: "d"
 ```
 
-### mapAny<T>(any: (T | T[]), callback: (currentValue: T, index?: number, array?: T[])=>any, thisArg?: any)=>(any | any[])
+`mapAny<T>(any: (T | T[]), callback: (currentValue: T, index?: number, array?: T[])=>any, thisArg?: any)=>(any | any[])`
 
 ```js
 import { mapAny } from 'for-any';
@@ -46,7 +46,7 @@ console.log(itemResult);
 // output: 10
 ```
 
-### filterAny<T>(any: (T | T[]), callback: (element: T, index?: number, array?: T[])=>boolean, thisArg?: any)=>(any | any[])
+`filterAny<T>(any: (T | T[]), callback: (element: T, index?: number, array?: T[])=>boolean, thisArg?: any)=>(any | any[])`
 
 ```js
 import { filterAny } from 'for-any';
@@ -70,7 +70,7 @@ console.log(item2Result);
 // output: "testing #2"
 ```
 
-### reduceAny<T>(any: (T | T[]), callback: (accumulator: T, currentValue: T, index?: number, array?: T[])=>any, initialValue?: T)=>any
+`reduceAny<T>(any: (T | T[]), callback: (accumulator: T, currentValue: T, index?: number, array?: T[])=>any, initialValue?: T)=>any`
 
 ```js
 import { reduceAny } from 'for-any';
@@ -89,7 +89,7 @@ console.log(itemResult);
 // output: 5
 ```
 
-### findAny<T>(any: (T | T[]), callback: (element: T, index?: number, array?: T[])=>boolean, thisArg?: any)=>T
+`findAny<T>(any: (T | T[]), callback: (element: T, index?: number, array?: T[])=>boolean, thisArg?: any)=>T`
 
 ```js
 import { findAny } from 'for-any';

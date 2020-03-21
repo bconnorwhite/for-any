@@ -1,11 +1,11 @@
 {
   "name": "@bconnorwhite/for-any",
-  "version": "1.1.5",
+  "version": "1.2.0",
   "description": "Use map, filter, reduce, and forEach on both arrays and non-array types.",
   "main": "./build/index.js",
   "scripts": {
     "build": "tsc --project ./tsconfig.json",
-    "rebuild": "rm -r build && npm run build"
+    "rebuild": "rimraf ./build && yarn build"
   },
   "author": "Connor White",
   "license": "ISC",
@@ -17,10 +17,15 @@
     "reduce",
     "filter",
     "item",
-    "array"
+    "array",
+    "typescript"
   ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ConnorWhite/for-any.git"
+  },
+  "devDependencies": {
+    "rimraf": "^3.0.2",
+    "typescript": "^3.8.3"
   }
 }
