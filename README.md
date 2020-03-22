@@ -20,7 +20,7 @@ yarn add @bconnorwhite/for-any
 
 - [stringReduceAny](#stringReduceAny)
 
-###### Utilities:
+###### Utility Functions:
 
 - [asArray](#asArray)
 
@@ -227,7 +227,7 @@ console.log(itemResult);
 
 
 ---
-### Utilities
+### Utility Functions
 ---
 
 #### asArray
