@@ -60,6 +60,16 @@ export function findAny<T, V>(
   }
 }
 
+export function stringReduceAny(
+  any: (string | string[]),
+  callback: (currentValue: string, index?: number, array?: string[]) => string,
+  initialValue: string = ""
+): string {
+  return asArray(any).reduce((previousValue, currentValue, currentIndex, array) => (
+    `${previousValue}${callback(currentValue, currentIndex, array)}`
+  ), initialValue);
+}
+
 export {
   asArray
 }

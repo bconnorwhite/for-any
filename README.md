@@ -8,17 +8,26 @@ yarn add @bconnorwhite/for-any
 
 ## API
 
+###### Standard Functions:
+
 - [mapAny](#mapAny)  
 - [filterAny](#filterAny)  
 - [reduceAny](#reduceAny)  
 - [forEachAny](#forEachAny)  
 - [findAny](#findAny)
 
+###### Extended Functions:
+
+- [stringReduceAny](#stringReduceAny)
+
 ###### Utilities:
 
 - [asArray](#asArray)
 
 ---
+### Standard Functions
+---
+
 #### mapAny
 
 ```ts
@@ -181,6 +190,41 @@ let item2Result = findAny(item2, callback);
 console.log(item2Result);
 // output: undefined
 ```
+---
+### Extended Functions
+---
+
+#### stringReduceAny
+
+```ts
+stringReduceAny(
+  any: (string | string[]),
+  callback: (currentValue: string, index?: number, array?: string[]) => string,
+  initialValue: string = ""
+) => string
+```
+
+###### Example usage:
+
+```js
+import { stringReduceAny } from '@bconnorwhite/for-any';
+
+let array = ["This", "forms", "a", "sentence"];
+let item = "Nice";
+
+let callback = (currentValue, index, array) => {
+  return currentValue + ((index === array.length-1) ? "." : " ");
+}
+
+let arrayResult = stringReduceAny(array, callback);
+console.log(arrayResult);
+// output: "This forms a sentence."
+
+let itemResult = reduceAny(item, callback);
+console.log(itemResult);
+// output: "Nice."
+```
+
 
 ---
 ### Utilities
