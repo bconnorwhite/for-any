@@ -220,8 +220,8 @@ let callback = (currentValue, index, array) => {
   return currentValue + ((index === array.length-1) ? "." : " ");
 }
 
-let stringArrayResult = stringReduceAny(array, callback);
-console.log(stringArrayResult);
+let arrayResult = stringReduceAny(array, callback);
+console.log(arrayResult);
 // output: "This forms a sentence."
 
 let itemResult = reduceAny(item, callback);
