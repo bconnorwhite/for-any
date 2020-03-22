@@ -62,16 +62,16 @@ export function findAny<T, V>(
 
 export function stringReduceAny<T, V>(
   any: (T | V[]),
-  callback: (currentValue: (T | V), index?: number, array?: (T | V)[]) => string,
+  callback: (currentValue: (T | V), index?: number, array?: (T | V)[]) => string | undefined,
   initialValue: string = ""
 ): string {
   if(Array.isArray(any)) {
     return any.reduce((previousValue, currentValue, currentIndex, array) => (
-      `${previousValue}${callback(currentValue, currentIndex, array)}`
+      `${previousValue}${callback(currentValue, currentIndex, array) ?? ""}`
     ), initialValue);
   } else {
     return asArray(any).reduce((previousValue, currentValue, currentIndex, array) => (
-      `${previousValue}${callback(currentValue, currentIndex, array)}`
+      `${previousValue}${callback(currentValue, currentIndex, array) ?? ""}`
     ), initialValue);
   }
 }
