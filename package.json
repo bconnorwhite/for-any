@@ -1,7 +1,7 @@
 {
   "name": "@bconnorwhite/for-any",
   "version": "1.4.0",
-  "description": "Use map, filter, reduce, and forEach on both arrays and non-array types.",
+  "description": "Use standard array functions on both arrays and non-array types.",
   "main": "./build/index.js",
   "scripts": {
     "build": "tsc --project ./tsconfig.json",

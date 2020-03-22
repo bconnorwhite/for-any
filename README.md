@@ -1,8 +1,11 @@
 # for-any
+![dependencies](https://img.shields.io/david/ConnorWhite/for-any)
+![minzipped size](https://img.shields.io/bundlephobia/minzip/@bconnorwhite/for-any)
+![typescript](https://img.shields.io/github/languages/top/ConnorWhite/for-any)
 
-Use map, filter, reduce, forEach, and find on both arrays and non-array types.
+Use standard array functions on both arrays and non-array types.
 
-```bash
+```
 yarn add @bconnorwhite/for-any
 ```
 
