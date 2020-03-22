@@ -1,39 +1,65 @@
-export function forEachAny<T>(any: (T | T[]), callback: (element: T, index?: number, array?: T[])=>void, thisArg?: any) {
-  if(Array.isArray(any)) {
-    any.forEach((element: T, index?: number, array?: T[]) => {
-      callback(element, index, array);
-    }, thisArg);
-  } else {
-    callback.bind(thisArg)(any, 0, [any]);
-  }
-}
+import { asArray } from "./utils";
 
-export function mapAny<T>(any: (T | T[]), callback: (currentValue: T, index?: number, array?: T[])=>any, thisArg?: any) {
+export function mapAny<T, V>(
+  any: (T | V[]),
+  callback: (currentValue: (T | V), index?: number, array?: (T | V)[]) => any,
+  thisArg?: any
+): (any | any[]) {
   if(Array.isArray(any)) {
-    return any.map((currentValue: T, index?: number, array?: T[]) => callback(currentValue, index, array), thisArg);
+    return any.map(callback, thisArg);
   } else {
     return callback.bind(thisArg)(any, 0, [any]);
   }
 }
 
-export function filterAny<T>(any: (T | T[]), callback: (element: T, index?: number, array?: T[])=>boolean, thisArg?: any) {
+export function filterAny<T, V>(
+  any: (T | V[]),
+  callback: (element: (T | V), index?: number, array?: (T | V)[]) => boolean,
+  thisArg?: any
+): (T | V[]) {
   if(Array.isArray(any)) {
-    return any.filter((element: T, index?: number, array?: T[]) => callback(element, index, array), thisArg);
+    return any.filter(callback, thisArg);
   } else {
     return callback.bind(thisArg)(any, 0, [any]) ? any : undefined;
   }
 }
 
-export function reduceAny<T>(any: (T | T[]), callback: (accumulator: T, currentValue: T, index?: number, array?: T[])=>any, initialValue?: T) {
-  if(!Array.isArray(any)) {
-    any = [any];
+export function reduceAny<T, V>(
+  any: (T | V[]),
+  callback: (accumulator: any, currentValue: (T | V), index?: number, array?: (T | V)[]) => any,
+  initialValue?: any
+): any {
+  if(Array.isArray(any)) {
+    return any.reduce(callback, initialValue);
+  } else {
+    return asArray(any).reduce(callback, initialValue);
   }
-  return any.reduce((accumulator: T, currentValue: T, index?: number, array?: T[]) => callback(accumulator, currentValue, index, array), initialValue);
 }
 
-export function findAny<T>(any: (T | T[]), callback: (element: T, index?: number, array?: T[])=>boolean, thisArg?: any) {
-  if(!Array.isArray(any)) {
-    any = [any];
+export function forEachAny<T, V>(
+  any: (T | V[]),
+  callback: (element: (T | V), index?: number, array?: (T | V)[]) => void,
+  thisArg?: any
+): void {
+  if(Array.isArray(any)) {
+    any.forEach(callback, thisArg);
+  } else {
+    callback.bind(thisArg)(any, 0, [any]);
   }
-  return any.find(callback, thisArg);
+}
+
+export function findAny<T, V>(
+  any: (T | V[]),
+  callback: (element: (T | V), index?: number, array?: (T | V)[]) => boolean,
+  thisArg?: any
+): (T | V) {
+  if(Array.isArray(any)) {
+    return any.find(callback, thisArg);
+  } else {
+    return asArray(any).find(callback, thisArg);
+  }
+}
+
+export {
+  asArray
 }

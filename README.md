@@ -14,13 +14,17 @@ yarn add @bconnorwhite/for-any
 - [forEachAny](#forEachAny)  
 - [findAny](#findAny)
 
+###### Utilities:
+
+- [asArray](#asArray)
+
 ---
 #### mapAny
 
 ```ts
-mapAny<T>(
-  any: (T | T[]),
-  callback: (currentValue: T, index?: number, array?: T[]) => any,
+mapAny<T, V>(
+  any: (T | V[]),
+  callback: (currentValue: (T | V), index?: number, array?: (T | V)[]) => any,
   thisArg?: any
 ) => (any | any[])
 ```
@@ -28,7 +32,7 @@ mapAny<T>(
 ###### Example usage:
 
 ```js
-import { mapAny } from 'for-any';
+import { mapAny } from '@bconnorwhite/for-any';
 
 let array = [1, 4, 9, 16];
 let item = 5;
@@ -49,17 +53,17 @@ console.log(itemResult);
 #### filterAny
 
 ```ts
-filterAny<T>(
-  any: (T | T[]),
-  callback: (element: T, index?: number, array?: T[]) => boolean,
+filterAny<T, V>(
+  any: (T | V[]),
+  callback: (element: (T | V), index?: number, array?: (T | V)[]) => boolean,
   thisArg?: any
-) => (any | any[])
+) => (T | V[])
 ```
 
 ###### Example usage:
 
 ```js
-import { filterAny } from 'for-any';
+import { filterAny } from '@bconnorwhite/for-any';
 
 let array = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
 let item1 = 'test';
@@ -85,17 +89,17 @@ console.log(item2Result);
 #### reduceAny
 
 ```ts
-reduceAny<T>(
-  any: (T | T[]),
-  callback: (accumulator: T, currentValue: T, index?: number, array?: T[]) => any,
-  initialValue?: T
+reduceAny<T, V>(
+  any: (T | V[]),
+  callback: (accumulator: any, currentValue: (T | V), index?: number, array?: (T | V)[]) => any,
+  initialValue?: any
 ) => any
 ```
 
 ###### Example usage:
 
 ```js
-import { reduceAny } from 'for-any';
+import { reduceAny } from '@bconnorwhite/for-any';
 
 let array = [1, 2, 3, 4];
 let item = 5;
@@ -116,9 +120,9 @@ console.log(itemResult);
 #### forEachAny
 
 ```ts
-forEachAny<T>(
-  any: (T | T[]),
-  callback: (element: T, index?: number, array?: T[]) => void,
+forEachAny<T, V>(
+  any: (T | V[]),
+  callback: (element: (T | V), index?: number, array?: (T | V)[]) => void,
   thisArg?: any
 ) => void
 ```
@@ -126,7 +130,7 @@ forEachAny<T>(
 ###### Example usage:
 
 ```js
-import { forEachAny } from 'for-any';
+import { forEachAny } from '@bconnorwhite/for-any';
 
 let array = ['a', 'b', 'c'];
 let item = 'd';
@@ -147,17 +151,17 @@ forEachAny(item, callback);
 #### findAny
 
 ```ts
-findAny<T>(
-  any: (T | T[]),
-  callback: (element: T, index?: number, array?: T[]) => boolean,
+findAny<T, V>(
+  any: (T | V[]),
+  callback: (element: (T | V), index?: number, array?: (T | V)[]) => boolean,
   thisArg?: any
-) => T
+) => (T | V)
 ```
 
 ###### Example usage:
 
 ```js
-import { findAny } from 'for-any';
+import { findAny } from '@bconnorwhite/for-any';
 
 let array = [5, 12, 8, 130, 44];
 let item1 = 15;
@@ -176,4 +180,31 @@ console.log(item1Result);
 let item2Result = findAny(item2, callback);
 console.log(item2Result);
 // output: undefined
+```
+
+---
+### Utilities
+---
+
+#### asArray
+
+```ts
+asArray<T>(any: (T | T[])): T[]
+```
+
+###### Example usage:
+
+```js
+import { asArray } from '@bconnorwhite/for-any';
+
+let array = [5, 12, 8, 130, 44];
+let item = 15;
+
+let arrayResult = asArray(array);
+console.log(arrayResult);
+// output: [5, 12, 8, 130, 44]
+
+let itemResult = asArray(item);
+console.log(itemResult);
+// output: [15]
 ```
