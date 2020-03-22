@@ -201,9 +201,9 @@ console.log(item2Result);
 #### stringReduceAny
 
 ```ts
-stringReduceAny(
-  any: (string | string[]),
-  callback: (currentValue: string, index?: number, array?: string[]) => string,
+stringReduceAny<T, V>(
+  any: (T | V[]),
+  callback: (currentValue: (T | V), index?: number, array?: (T | V)[]) => string,
   initialValue: string = ""
 ) => string
 ```
@@ -220,8 +220,8 @@ let callback = (currentValue, index, array) => {
   return currentValue + ((index === array.length-1) ? "." : " ");
 }
 
-let arrayResult = stringReduceAny(array, callback);
-console.log(arrayResult);
+let stringArrayResult = stringReduceAny(array, callback);
+console.log(stringArrayResult);
 // output: "This forms a sentence."
 
 let itemResult = reduceAny(item, callback);

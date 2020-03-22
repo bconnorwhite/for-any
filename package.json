@@ -1,6 +1,6 @@
 {
   "name": "@bconnorwhite/for-any",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "Use standard array functions on both arrays and non-array types.",
   "main": "./build/index.js",
   "scripts": {
