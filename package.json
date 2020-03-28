@@ -1,14 +1,9 @@
 {
   "name": "@bconnorwhite/for-any",
-  "version": "1.4.5",
+  "version": "1.4.6",
   "description": "Use standard array functions on both arrays and non-array types.",
-  "main": "./build/index.js",
-  "scripts": {
-    "build": "tsc --project ./tsconfig.json",
-    "rebuild": "rimraf ./build && yarn build"
-  },
   "author": "Connor White",
-  "license": "ISC",
+  "license": "MIT",
   "keywords": [
     "for",
     "any",
@@ -23,6 +18,11 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bconnorwhite/for-any.git"
+  },
+  "main": "./build/index.js",
+  "scripts": {
+    "build": "tsc --project ./tsconfig.json",
+    "rebuild": "rimraf ./build && yarn build"
   },
   "devDependencies": {
     "rimraf": "^3.0.2",
