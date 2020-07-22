@@ -33,7 +33,7 @@ yarn add @bconnorwhite/for-any
 ---
 
 #### mapAny
-
+###### Types:
 ```ts
 mapAny<T, V>(
   any: (T | V[]),
@@ -64,13 +64,13 @@ console.log(itemResult);
 ---
 
 #### filterAny
-
+###### Types:
 ```ts
 filterAny<T, V>(
   any: (T | V[]),
   callback: (element: (T | V), index?: number, array?: (T | V)[]) => boolean,
   thisArg?: any
-) => (T | V[])
+) => (T | V[] | undefined)
 ```
 
 ###### Example usage:
@@ -100,7 +100,7 @@ console.log(item2Result);
 ---
 
 #### reduceAny
-
+###### Types:
 ```ts
 reduceAny<T, V>(
   any: (T | V[]),
@@ -131,7 +131,7 @@ console.log(itemResult);
 ---
 
 #### forEachAny
-
+###### Types:
 ```ts
 forEachAny<T, V>(
   any: (T | V[]),
@@ -162,13 +162,13 @@ forEachAny(item, callback);
 ---
 
 #### findAny
-
+###### Types:
 ```ts
 findAny<T, V>(
   any: (T | V[]),
   callback: (element: (T | V), index?: number, array?: (T | V)[]) => boolean,
   thisArg?: any
-) => (T | V)
+) => (T | V | undefined)
 ```
 
 ###### Example usage:
@@ -199,7 +199,7 @@ console.log(item2Result);
 ---
 
 #### stringReduceAny
-
+###### Types:
 ```ts
 stringReduceAny<T, V>(
   any: (T | V[]),
@@ -235,7 +235,7 @@ console.log(itemResult);
 ---
 
 #### asArray
-
+###### Types:
 ```ts
 asArray<T>(any: (T | T[])): T[]
 ```

@@ -1,6 +1,6 @@
 {
   "name": "@bconnorwhite/for-any",
-  "version": "1.4.6",
+  "version": "1.4.7",
   "description": "Use standard array functions on both arrays and non-array types.",
   "author": "Connor White",
   "license": "MIT",
@@ -21,10 +21,12 @@
   },
   "main": "./build/index.js",
   "scripts": {
-    "build": "tsc --project ./tsconfig.json",
-    "rebuild": "rimraf ./build && yarn build"
+    "build": "yarn bob build",
+    "rebuild": "rimraf ./build && yarn build",
+    "prepublishOnly": "yarn build"
   },
   "devDependencies": {
+    "@bconnorwhite/bob": "^1.4.1",
     "rimraf": "^3.0.2",
     "typescript": "^3.8.3"
   }

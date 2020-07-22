@@ -16,7 +16,7 @@ export function filterAny<T, V>(
   any: (T | V[]),
   callback: (element: (T | V), index?: number, array?: (T | V)[]) => boolean,
   thisArg?: any
-): (T | V[]) {
+): (T | V[] | undefined) {
   if(Array.isArray(any)) {
     return any.filter(callback, thisArg);
   } else {
@@ -52,7 +52,7 @@ export function findAny<T, V>(
   any: (T | V[]),
   callback: (element: (T | V), index?: number, array?: (T | V)[]) => boolean,
   thisArg?: any
-): (T | V) {
+): (T | V | undefined) {
   if(Array.isArray(any)) {
     return any.find(callback, thisArg);
   } else {
