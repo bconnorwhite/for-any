@@ -22,12 +22,9 @@
   "main": "./build/index.js",
   "scripts": {
     "build": "yarn bob build",
-    "rebuild": "rimraf ./build && yarn build",
     "prepublishOnly": "yarn build"
   },
   "devDependencies": {
-    "@bconnorwhite/bob": "^1.4.1",
-    "rimraf": "^3.0.2",
-    "typescript": "^3.9.7"
+    "@bconnorwhite/bob": "^1.8.0"
   }
 }
