@@ -1,18 +1,36 @@
-# for-any
-![dependencies](https://img.shields.io/david/bconnorwhite/for-any)
-![minzipped size](https://img.shields.io/bundlephobia/minzip/@bconnorwhite/for-any)
-![typescript](https://img.shields.io/github/languages/top/bconnorwhite/for-any)
-![npm](https://img.shields.io/npm/v/@bconnorwhite/for-any)
+<div align="center">
+  <h1>@bconnorwhite/for-any</h1>
+  <a href="https://npmjs.com/package/@bconnorwhite/for-any">
+    <img alt="npm" src="https://img.shields.io/npm/v/@bconnorwhite/for-any.svg">
+  </a>
+  <a href="https://github.com/bconnorwhite/for-any">
+    <img alt="typescript" src="https://img.shields.io/github/languages/top/bconnorwhite/for-any.svg">
+  </a>
+  <a href="https://github.com/bconnorwhite/for-any">
+    <img alt="GitHub stars" src="https://img.shields.io/github/stars/bconnorwhite/for-any?label=Stars%20Appreciated%21&style=social">
+  </a>
+  <a href="https://twitter.com/bconnorwhite">
+    <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/bconnorwhite.svg?label=%40bconnorwhite&style=social">
+  </a>
+</div>
 
-Use standard array functions on both arrays and non-array types.
+<br />
 
-```
+> Use standard array functions on both arrays and non-array types.
+
+## Installation
+
+```bash
 yarn add @bconnorwhite/for-any
+```
+
+```bash
+npm install @bconnorwhite/for-any
 ```
 
 ## API
 
-###### Standard Functions:
+### Standard Functions:
 
 - [mapAny](#mapAny)  
 - [filterAny](#filterAny)  
@@ -20,31 +38,22 @@ yarn add @bconnorwhite/for-any
 - [forEachAny](#forEachAny)  
 - [findAny](#findAny)
 
-###### Extended Functions:
+### Extended Functions:
 
 - [stringReduceAny](#stringReduceAny)
 
-###### Utility Functions:
+### Utility Functions:
 
 - [asArray](#asArray)
 
----
+##
+
 ### Standard Functions
----
 
 #### mapAny
-###### Types:
+
+##### Usage:
 ```ts
-mapAny<T, V>(
-  any: (T | V[]),
-  callback: (currentValue: (T | V), index?: number, array?: (T | V)[]) => any,
-  thisArg?: any
-) => (any | any[])
-```
-
-###### Example usage:
-
-```js
 import { mapAny } from '@bconnorwhite/for-any';
 
 let array = [1, 4, 9, 16];
@@ -61,21 +70,22 @@ console.log(itemResult);
 // output: 10
 ```
 
----
-
-#### filterAny
-###### Types:
+##### Types:
 ```ts
-filterAny<T, V>(
+function mapAny<T, V>(
   any: (T | V[]),
-  callback: (element: (T | V), index?: number, array?: (T | V)[]) => boolean,
+  callback: (currentValue: (T | V), index?: number, array?: (T | V)[]) => any,
   thisArg?: any
-) => (T | V[] | undefined)
+): (any | any[]);
 ```
 
-###### Example usage:
+<br />
 
-```js
+#### filterAny
+
+##### Example usage:
+
+```ts
 import { filterAny } from '@bconnorwhite/for-any';
 
 let array = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
@@ -97,21 +107,21 @@ console.log(item2Result);
 // output: "testing #2"
 ```
 
----
-
-#### reduceAny
-###### Types:
+##### Types:
 ```ts
-reduceAny<T, V>(
+function filterAny<T, V>(
   any: (T | V[]),
-  callback: (accumulator: any, currentValue: (T | V), index?: number, array?: (T | V)[]) => any,
-  initialValue?: any
-) => any
+  callback: (element: (T | V), index?: number, array?: (T | V)[]) => boolean,
+  thisArg?: any
+): (T | V[] | undefined);
 ```
 
-###### Example usage:
+<br />
 
-```js
+#### reduceAny
+
+##### Example usage:
+```ts
 import { reduceAny } from '@bconnorwhite/for-any';
 
 let array = [1, 2, 3, 4];
@@ -128,21 +138,21 @@ console.log(itemResult);
 // output: 5
 ```
 
----
-
-#### forEachAny
-###### Types:
+##### Types:
 ```ts
-forEachAny<T, V>(
+function reduceAny<T, V>(
   any: (T | V[]),
-  callback: (element: (T | V), index?: number, array?: (T | V)[]) => void,
-  thisArg?: any
-) => void
+  callback: (accumulator: any, currentValue: (T | V), index?: number, array?: (T | V)[]) => any,
+  initialValue?: any
+): any;
 ```
 
-###### Example usage:
+<br />
 
-```js
+#### forEachAny
+
+##### Example usage:
+```ts
 import { forEachAny } from '@bconnorwhite/for-any';
 
 let array = ['a', 'b', 'c'];
@@ -159,21 +169,21 @@ forEachAny(item, callback);
 // output: "d"
 ```
 
----
-
-#### findAny
-###### Types:
+##### Types:
 ```ts
-findAny<T, V>(
+function forEachAny<T, V>(
   any: (T | V[]),
-  callback: (element: (T | V), index?: number, array?: (T | V)[]) => boolean,
+  callback: (element: (T | V), index?: number, array?: (T | V)[]) => void,
   thisArg?: any
-) => (T | V | undefined)
+): void;
 ```
 
-###### Example usage:
+<br />
 
-```js
+#### findAny
+
+##### Example usage:
+```ts
 import { findAny } from '@bconnorwhite/for-any';
 
 let array = [5, 12, 8, 130, 44];
@@ -194,23 +204,24 @@ let item2Result = findAny(item2, callback);
 console.log(item2Result);
 // output: undefined
 ```
----
-### Extended Functions
----
 
-#### stringReduceAny
-###### Types:
+##### Types:
 ```ts
-stringReduceAny<T, V>(
+function findAny<T, V>(
   any: (T | V[]),
-  callback: (currentValue: (T | V), index?: number, array?: (T | V)[]) => string,
-  initialValue: string = ""
-) => string
+  callback: (element: (T | V), index?: number, array?: (T | V)[]) => boolean,
+  thisArg?: any
+): (T | V | undefined);
 ```
 
-###### Example usage:
+##
 
-```js
+### Extended Functions
+
+#### stringReduceAny
+
+##### Example usage:
+```ts
 import { stringReduceAny } from '@bconnorwhite/for-any';
 
 let array = ["This", "forms", "a", "sentence"];
@@ -229,20 +240,23 @@ console.log(itemResult);
 // output: "Nice."
 ```
 
-
----
-### Utility Functions
----
-
-#### asArray
-###### Types:
+##### Types:
 ```ts
-asArray<T>(any: (T | T[])): T[]
+function stringReduceAny<T, V>(
+  any: (T | V[]),
+  callback: (currentValue: (T | V), index?: number, array?: (T | V)[]) => string,
+  initialValue: string = ""
+): string;
 ```
 
-###### Example usage:
+##
 
-```js
+### Utility Functions
+
+#### asArray
+
+##### Example usage:
+```ts
 import { asArray } from '@bconnorwhite/for-any';
 
 let array = [5, 12, 8, 130, 44];
@@ -256,3 +270,18 @@ let itemResult = asArray(item);
 console.log(itemResult);
 // output: [15]
 ```
+
+##### Types:
+```ts
+function asArray<T>(any: (T | T[])): T[];
+```
+
+<br />
+
+<h2>Dev Dependencies<img align="right" alt="David" src="https://img.shields.io/david/dev/bconnorwhite/for-any.svg"></h2>
+
+- [@bconnorwhite/bob](https://www.npmjs.com/package/@bconnorwhite/bob): Bob is a toolkit for TypeScript projects
+
+<h2>License <img align="right" alt="license" src="https://img.shields.io/npm/l/@bconnorwhite/for-any.svg"></h2>
+
+[MIT](https://opensource.org/licenses/MIT)
