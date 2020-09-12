@@ -2,8 +2,13 @@
   "name": "@bconnorwhite/for-any",
   "version": "1.4.8",
   "description": "Use standard array functions on both arrays and non-array types.",
-  "author": "Connor White",
   "license": "MIT",
+  "author": "Connor White",
+  "homepage": "https://connorwhite.org/github/for-any",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bconnorwhite/for-any.git"
+  },
   "keywords": [
     "for",
     "any",
@@ -18,13 +23,13 @@
   "files": [
     "build"
   ],
-  },
   "main": "./build/index.js",
   "scripts": {
     "build": "yarn bob build",
+    "postversion": "git push",
     "prepublishOnly": "yarn build"
   },
   "devDependencies": {
-    "@bconnorwhite/bob": "^1.8.0"
+    "@bconnorwhite/bob": "^2.1.0"
   }
 }
