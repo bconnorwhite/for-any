@@ -15,9 +15,9 @@
     "array",
     "typescript"
   ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/bconnorwhite/for-any.git"
+  "files": [
+    "build"
+  ],
   },
   "main": "./build/index.js",
   "scripts": {
