@@ -63,7 +63,7 @@ export function findAny<T, V>(
 export function stringReduceAny<T, V>(
   any: (T | V[]),
   callback: (currentValue: (T | V), index?: number, array?: (T | V)[]) => string | undefined,
-  initialValue: string = ""
+  initialValue = ""
 ): string {
   if(Array.isArray(any)) {
     return any.reduce((previousValue, currentValue, currentIndex, array) => (
