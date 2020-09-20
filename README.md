@@ -4,7 +4,7 @@
     <img alt="npm" src="https://img.shields.io/npm/v/@bconnorwhite/for-any.svg">
   </a>
   <a href="https://github.com/bconnorwhite/for-any">
-    <img alt="typescript" src="https://img.shields.io/github/languages/top/bconnorwhite/for-any.svg">
+    <img alt="typescript" src="https://img.shields.io/badge/TypeScript-%F0%9F%91%8D-blue.svg">
   </a>
   <a href="https://github.com/bconnorwhite/for-any">
     <img alt="GitHub stars" src="https://img.shields.io/github/stars/bconnorwhite/for-any?label=Stars%20Appreciated%21&style=social">
@@ -281,6 +281,8 @@ function asArray<T>(any: (T | T[])): T[];
 <h2>Dev Dependencies<img align="right" alt="David" src="https://img.shields.io/david/dev/bconnorwhite/for-any.svg"></h2>
 
 - [@bconnorwhite/bob](https://www.npmjs.com/package/@bconnorwhite/bob): Bob is a toolkit for TypeScript projects
+
+<br />
 
 <h2>License <img align="right" alt="license" src="https://img.shields.io/npm/l/@bconnorwhite/for-any.svg"></h2>
 
