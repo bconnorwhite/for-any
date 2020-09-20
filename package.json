@@ -29,6 +29,9 @@
     "postversion": "git push",
     "prepublishOnly": "yarn build"
   },
+  "dependencies": {
+    "as-typed-array": "^1.0.0"
+  },
   "devDependencies": {
     "@bconnorwhite/bob": "^2.1.0"
   }

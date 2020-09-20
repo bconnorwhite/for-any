@@ -1,4 +1,4 @@
-import { asArray } from "./utils";
+import asArray from "as-typed-array";
 
 export function mapAny<T, V>(
   any: (T | V[]),

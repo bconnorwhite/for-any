@@ -278,6 +278,12 @@ function asArray<T>(any: (T | T[])): T[];
 
 <br />
 
+<h2>Dependencies<img align="right" alt="dependencies" src="https://img.shields.io/david/bconnorwhite/for-any.svg"></h2>
+
+- [as-typed-array](https://www.npmjs.com/package/as-typed-array): Make any value an array, and maintain types
+
+<br />
+
 <h2>Dev Dependencies<img align="right" alt="David" src="https://img.shields.io/david/dev/bconnorwhite/for-any.svg"></h2>
 
 - [@bconnorwhite/bob](https://www.npmjs.com/package/@bconnorwhite/bob): Bob is a toolkit for TypeScript projects
