@@ -1,7 +1,7 @@
 {
   "name": "@bconnorwhite/for-any",
   "version": "1.4.9",
-  "description": "Use standard array functions on both arrays and non-array types.",
+  "description": "Use standard array functions on both arrays and non-array types",
   "license": "MIT",
   "author": "Connor White",
   "homepage": "https://connorwhite.org/github/for-any",
