@@ -26,15 +26,17 @@
   "main": "./build/index.js",
   "scripts": {
     "build": "yarn bob build",
+    "commit": "bob commit",
     "lint": "bob lint",
     "postversion": "git push --follow-tags",
-    "prepublishOnly": "yarn build"
+    "prepublishOnly": "yarn build",
+    "release": "yarn publish"
   },
   "dependencies": {
     "as-typed-array": "^1.0.0"
   },
   "devDependencies": {
-    "@bconnorwhite/bob": "^2.3.1"
+    "@bconnorwhite/bob": "^2.9.4"
   },
   "eslintConfig": {
     "extends": "eslint-config-bob"
