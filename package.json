@@ -36,7 +36,7 @@
     "as-typed-array": "^1.0.0"
   },
   "devDependencies": {
-    "@bconnorwhite/bob": "^2.9.4"
+    "@bconnorwhite/bob": "^2.9.5"
   },
   "eslintConfig": {
     "extends": "eslint-config-bob"
