@@ -2,9 +2,11 @@
   "name": "@bconnorwhite/for-any",
   "version": "1.4.12",
   "description": "Use standard array functions on both arrays and non-array types",
-  "license": "MIT",
+  "main": ".auto/build/index.js",
   "author": "Connor White",
-  "homepage": "https://connorwhite.org/github/for-any",
+  "license": "MIT",
+  "private": false,
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bconnorwhite/for-any.git"
@@ -20,28 +22,36 @@
     "array",
     "typescript"
   ],
+  "exports": "./.auto/build/index.js",
+  "types": ".auto/build/index.d.ts",
   "files": [
-    "build"
+    ".auto/build/**/!(tsconfig.tsbuildinfo)"
   ],
-  "main": "./build/index.js",
+  "engines": {
+    "node": "^14.13.1 || >=16.0.0"
+  },
   "scripts": {
-    "build": "yarn bob build",
-    "commit": "bob commit",
-    "lint": "bob lint",
-    "postversion": "git push --follow-tags",
-    "prepublishOnly": "yarn build",
-    "release": "yarn publish"
+    "build": "auto build",
+    "dev": "auto dev",
+    "lint": "auto lint",
+    "prepack": "yarn build",
+    "release": "auto release",
+    "test": "auto test",
+    "typecheck": "auto typecheck"
   },
   "dependencies": {
-    "as-typed-array": "^1.0.0"
+    "as-typed-array": "^3.0.1"
   },
   "devDependencies": {
-    "@bconnorwhite/bob": "^2.9.5"
+    "autorepo": "^0.1.7"
   },
   "eslintConfig": {
-    "extends": "eslint-config-bob"
+    "extends": "@autosoft/eslint-config"
+  },
+  "jest": {
+    "preset": "@autosoft/jest-preset"
   },
   "npmpackagejsonlint": {
-    "extends": "npm-package-json-lint-config-bob"
+    "extends": "npm-package-json-lint-config-auto"
   }
 }
