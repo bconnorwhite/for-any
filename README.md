@@ -1,41 +1,55 @@
-<div align="center">
+<!--BEGIN HEADER-->
+<div id="top" align="center">
   <h1>@bconnorwhite/for-any</h1>
   <a href="https://npmjs.com/package/@bconnorwhite/for-any">
-    <img alt="npm" src="https://img.shields.io/npm/v/@bconnorwhite/for-any.svg">
+    <img alt="NPM" src="https://img.shields.io/npm/v/@bconnorwhite/for-any.svg">
   </a>
   <a href="https://github.com/bconnorwhite/for-any">
-    <img alt="typescript" src="https://img.shields.io/badge/TypeScript-%F0%9F%91%8D-blue.svg">
-  </a>
-  <a href="https://github.com/bconnorwhite/for-any">
-    <img alt="GitHub stars" src="https://img.shields.io/github/stars/bconnorwhite/for-any?label=Stars%20Appreciated%21&style=social">
-  </a>
-  <a href="https://twitter.com/bconnorwhite">
-    <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/bconnorwhite.svg?label=%40bconnorwhite&style=social">
+    <img alt="TypeScript" src="https://img.shields.io/github/languages/top/bconnorwhite/for-any.svg">
   </a>
 </div>
 
 <br />
 
-> Use standard array functions on both arrays and non-array types.
+<blockquote align="center">Use standard array functions on both arrays and non-array types.</blockquote>
+
+<br />
+
+_If I should maintain this repo, please ⭐️_
+<a href="https://github.com/bconnorwhite/for-any">
+  <img align="right" alt="GitHub stars" src="https://img.shields.io/github/stars/bconnorwhite/for-any?label=%E2%AD%90%EF%B8%8F&style=social">
+</a>
+
+_DM me on [Twitter](https://twitter.com/bconnorwhite) if you have questions or suggestions._
+<a href="https://twitter.com/bconnorwhite">
+  <img align="right" alt="Twitter" src="https://img.shields.io/twitter/url?label=%40bconnorwhite&style=social&url=https%3A%2F%2Ftwitter.com%2Fbconnorwhite">
+</a>
+
+---
+<!--END HEADER-->
 
 ## Installation
 
-```bash
+```sh
 yarn add @bconnorwhite/for-any
 ```
 
-```bash
+```sh
 npm install @bconnorwhite/for-any
 ```
 
-## API
+```sh
+pnpm add @bconnorwhite/for-any
+```
+
+## Usage
 
 ### Standard Functions:
 
-- [mapAny](#mapAny)  
-- [filterAny](#filterAny)  
-- [reduceAny](#reduceAny)  
-- [forEachAny](#forEachAny)  
+- [mapAny](#mapAny)
+- [filterAny](#filterAny)
+- [reduceAny](#reduceAny)
+- [forEachAny](#forEachAny)
 - [findAny](#findAny)
 
 ### Extended Functions:
@@ -70,15 +84,6 @@ console.log(itemResult);
 // output: 10
 ```
 
-##### Types:
-```ts
-function mapAny<T, V>(
-  any: (T | V[]),
-  callback: (currentValue: (T | V), index?: number, array?: (T | V)[]) => any,
-  thisArg?: any
-): (any | any[]);
-```
-
 <br />
 
 #### filterAny
@@ -107,15 +112,6 @@ console.log(item2Result);
 // output: "testing #2"
 ```
 
-##### Types:
-```ts
-function filterAny<T, V>(
-  any: (T | V[]),
-  callback: (element: (T | V), index?: number, array?: (T | V)[]) => boolean,
-  thisArg?: any
-): (T | V[] | undefined);
-```
-
 <br />
 
 #### reduceAny
@@ -138,15 +134,6 @@ console.log(itemResult);
 // output: 5
 ```
 
-##### Types:
-```ts
-function reduceAny<T, V>(
-  any: (T | V[]),
-  callback: (accumulator: any, currentValue: (T | V), index?: number, array?: (T | V)[]) => any,
-  initialValue?: any
-): any;
-```
-
 <br />
 
 #### forEachAny
@@ -167,15 +154,6 @@ forEachAny(array, callback);
 
 forEachAny(item, callback);
 // output: "d"
-```
-
-##### Types:
-```ts
-function forEachAny<T, V>(
-  any: (T | V[]),
-  callback: (element: (T | V), index?: number, array?: (T | V)[]) => void,
-  thisArg?: any
-): void;
 ```
 
 <br />
@@ -205,15 +183,6 @@ console.log(item2Result);
 // output: undefined
 ```
 
-##### Types:
-```ts
-function findAny<T, V>(
-  any: (T | V[]),
-  callback: (element: (T | V), index?: number, array?: (T | V)[]) => boolean,
-  thisArg?: any
-): (T | V | undefined);
-```
-
 ##
 
 ### Extended Functions
@@ -240,15 +209,6 @@ console.log(itemResult);
 // output: "Nice."
 ```
 
-##### Types:
-```ts
-function stringReduceAny<T, V>(
-  any: (T | V[]),
-  callback: (currentValue: (T | V), index?: number, array?: (T | V)[]) => string,
-  initialValue: string = ""
-): string;
-```
-
 ##
 
 ### Utility Functions
@@ -271,25 +231,25 @@ console.log(itemResult);
 // output: [15]
 ```
 
-##### Types:
-```ts
-function asArray<T>(any: (T | T[])): T[];
-```
+<!--BEGIN FOOTER-->
 
 <br />
 
-<h2>Dependencies<img align="right" alt="dependencies" src="https://img.shields.io/david/bconnorwhite/for-any.svg"></h2>
+<h2 id="dependencies">Dependencies<a href="https://www.npmjs.com/package/@bconnorwhite/for-any?activeTab=dependencies"><img align="right" alt="dependencies" src="https://img.shields.io/librariesio/release/npm/@bconnorwhite/for-any.svg"></a></h2>
 
-- [as-typed-array](https://www.npmjs.com/package/as-typed-array): Make any value an array, and maintain types
+- [as-typed-array](https://www.npmjs.com/package/as-typed-array): Make any value an array
 
-<br />
-
-<h2>Dev Dependencies<img align="right" alt="David" src="https://img.shields.io/david/dev/bconnorwhite/for-any.svg"></h2>
-
-- [@bconnorwhite/bob](https://www.npmjs.com/package/@bconnorwhite/bob): Bob is a toolkit for TypeScript projects
 
 <br />
 
-<h2>License <img align="right" alt="license" src="https://img.shields.io/npm/l/@bconnorwhite/for-any.svg"></h2>
+<h3>Dev Dependencies</h3>
+
+- [autorepo](https://www.npmjs.com/package/autorepo): Autorepo abstracts away your dev dependencies, providing a single command to run all of your scripts.
+
+
+<br />
+
+<h2 id="license">License <a href="https://opensource.org/licenses/MIT"><img align="right" alt="license" src="https://img.shields.io/npm/l/@bconnorwhite/for-any.svg"></a></h2>
 
 [MIT](https://opensource.org/licenses/MIT)
+<!--END FOOTER-->
